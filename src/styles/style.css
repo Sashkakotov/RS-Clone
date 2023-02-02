@@ -397,6 +397,10 @@ body {
   color: #939090;
 }
 
+.github-link:hover {
+  color: #b19bf3;
+}
+
 .github-img {
   width: 1.6rem;
   height: 1.6rem;
@@ -450,6 +454,25 @@ body {
 .search-input {
   font-size: 1.5rem;
   color: #939090;
+}
+
+.sign {
+  display: flex;
+  align-items: center;
+}
+
+.sign-in {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: #939090;
+}
+
+.sign-in:hover {
+  color: #b19bf3;
+}
+
+.hidden {
+  display: none;
 }
 
 .user {
@@ -546,6 +569,27 @@ body {
   right: 1rem;
   top: 1rem;
   cursor: pointer;
+}
+
+.button {
+  padding: 0.5rem;
+  border: 1px solid #dddbdb;
+  border-radius: 5px;
+  background-color: #b19bf3;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 140%;
+}
+
+.button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#dddbdb), to(#ffffff));
+  background: gradient(top, #dddbdb, #ffffff);
+  box-shadow: inset 1px 1px 0 #dddbdb;
+  color: #b19bf3;
 }
 
 .input {

@@ -2,6 +2,8 @@ const UI = {
   headerLogo: 'Task Manager',
 
   searchInputText: 'Search...',
+  signIn: 'Sign in',
+  signUp: 'Sign up',
 
   asideHome: 'Home',
   asideMessages: 'Messages',
