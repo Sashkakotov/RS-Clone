@@ -14,7 +14,6 @@ const getHomeHtml = () =>
       <section class="aside-projects">
         <h3 class="aside-projects_header">${UI.asideHeader}</h3>
         <img src="../assets/icons/plus.svg" class="plus-img">
-        <a href="" class="aside-item aside-project">First project</a>
       </section>
     </aside>
     <div class="main-info">

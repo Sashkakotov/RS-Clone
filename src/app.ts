@@ -4,13 +4,13 @@ import Navbar from './pages/navBar/Navbar';
 import Bottombar from './pages/bottomBar/Bottombar';
 import Utils from './services/Utils';
 import { tsQuerySelector } from './helpers/helpers';
-import Boards from './pages/boards/boards';
+import Board from './pages/boards/board';
 import Home from './pages/home/home';
 import Error404 from './pages/error404/error404';
 
 const routes = {
   '/': Home,
-  '/project/:id': Boards,
+  '/project/:id': Board,
 };
 
 const router = async () => {
@@ -30,9 +30,7 @@ const router = async () => {
   footer.innerHTML = await Bottombar.render();
   await Bottombar.after_render();
 
-  const page = routes[parsedURL as keyof object]
-    ? routes[parsedURL as keyof object]
-    : Error404;
+  const page = routes[parsedURL as keyof object] ? routes[parsedURL as keyof object] : Error404;
   content.innerHTML = await page.render();
   await page.after_render();
 };

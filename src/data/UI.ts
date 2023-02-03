@@ -11,6 +11,12 @@ const UI = {
   asideMembers: 'Members',
   asideSettings: 'Settings',
   asideHeader: 'MY PROJECTS',
+
+  newBoardPopupHeader: 'New board',
+  titleLabel: 'Project name',
+  titlePlaceholder: 'New project',
+  newBoardDescription: 'Start with a fast and simple task board.',
+  newBoardButton: 'CREATE',
 };
 
 export default UI;

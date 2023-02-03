@@ -1,11 +1,8 @@
-import { signUpURL, signInURL, usersURL } from '../constants/constants';
+import { SIGN_UP_URL, SIGN_IN_URL, USERS_URL } from '../constants/constants';
+import state from '../state/state';
 
-export const signUp = async (body: {
-  name: string;
-  login: string;
-  password: string;
-}) => {
-  const response = await fetch(signUpURL, {
+export const signUp = async (body: { name: string; login: string; password: string }) => {
+  const response = await fetch(SIGN_UP_URL, {
     method: 'POST',
     body: JSON.stringify(body),
     headers: {
@@ -16,8 +13,8 @@ export const signUp = async (body: {
   return response.status !== 200 ? false : { ...(await response.json()) };
 };
 
-export const signIn = async (body: { login: string; password: string }) => {
-  const response = await fetch(signInURL, {
+export const signIn = async (body: { login: string; password: string }): Promise<{ id: string; token: string }> => {
+  const response = await fetch(SIGN_IN_URL, {
     method: 'POST',
     body: JSON.stringify(body),
     headers: {
@@ -26,14 +23,15 @@ export const signIn = async (body: { login: string; password: string }) => {
   }).catch();
   if (response.status === 200) {
     const result = await response.json();
-
-    return result.token;
+    state.userId = result.id;
+    state.authToken = result.token;
+    return result;
   }
   return response.status !== 200 ? false : { ...(await response.json()) };
 };
 
 export const getUsers = async (token: string) => {
-  const response = await fetch(usersURL, {
+  const response = await fetch(USERS_URL, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -44,7 +42,7 @@ export const getUsers = async (token: string) => {
 };
 
 export const getUserById = async (token: string, id: string) => {
-  const response = await fetch(`${usersURL}/${id}`, {
+  const response = await fetch(`${USERS_URL}/${id}`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -54,13 +52,9 @@ export const getUserById = async (token: string, id: string) => {
   return result;
 };
 
-export const updateUser = async (
-  token: string,
-  id: string,
-  body: { name: string; login: string; password: string }
-) =>
+export const updateUser = async (token: string, id: string, body: { name: string; login: string; password: string }) =>
   (
-    await fetch(`${usersURL}/${id}`, {
+    await fetch(`${USERS_URL}/${id}`, {
       method: 'PUT',
       body: JSON.stringify(body),
       headers: {
@@ -72,7 +66,7 @@ export const updateUser = async (
 
 export const deleteUser = async (token: string, id: string) =>
   (
-    await fetch(`${usersURL}/${id}`, {
+    await fetch(`${USERS_URL}/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
