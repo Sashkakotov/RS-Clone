@@ -1,8 +1,7 @@
 import UI from '../../data/UI';
 
-const getHomeHtml = () =>
+const getAsideHtml = () =>
   `
-  <div class="main_home">
     <aside class="aside">
       <section class="aside-nav">
         <a href="" class="aside-item aside-home">${UI.asideHome}</a>
@@ -16,15 +15,6 @@ const getHomeHtml = () =>
         <img src="../assets/icons/plus.svg" class="plus-img">
       </section>
     </aside>
-    <div class="main-info">
-      <h2 class="main-info_header">About the project</h2>
-      <p>
-        Task manager is a collaborative work management app designed to track team projects, highlight tasks underway, show who they are assigned to, and detail progress towards completion.
-        <br>
-        At its core, task manager relies on the principles of Kanban project boards to visualize workflows, providing managers and team members with a simple overview of a project from start to finish.
-      </p>
-    </div>
-  </div>
   `;
 
-export default getHomeHtml;
+export default getAsideHtml;

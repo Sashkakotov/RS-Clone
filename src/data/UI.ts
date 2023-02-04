@@ -1,4 +1,6 @@
 const UI = {
+  errorMessage: "Something's wrong with your request! Please try later.",
+
   headerLogo: 'Task Manager',
 
   searchInputText: 'Search...',
