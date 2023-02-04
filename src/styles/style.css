@@ -501,6 +501,7 @@ body {
   display: flex;
   flex-direction: column;
   float: left;
+  border-right: 2px solid #dddbdb;
   color: #939090;
 }
 
@@ -616,7 +617,7 @@ body {
 
 .popup-active {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 25%;
   z-index: 10;
   display: flex;
@@ -627,6 +628,23 @@ body {
   background-color: #ffffff;
   padding: 2rem;
   border-radius: 5%;
+}
+
+.new-board-header {
+  position: relative;
+}
+
+.close-sign {
+  position: absolute;
+  top: -3rem;
+  right: -18rem;
+  width: 3rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.close-sign:hover {
+  transform: scale(1.2);
 }
 
 .new-board-form {
@@ -705,7 +723,6 @@ body {
 }
 
 .main-info {
-  border-left: 2px solid #dddbdb;
   padding: 2rem;
 }
 

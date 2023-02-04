@@ -22,6 +22,12 @@ const createNewBoard = async () => {
   header.classList.add('new-board-header');
   header.textContent = UI.newBoardPopupHeader;
 
+  const close = document.createElement('img');
+  close.classList.add('close-sign');
+  close.src = '../assets/icons/close.svg';
+  close.addEventListener('click', togglePopup);
+  header.append(close);
+
   const title = document.createElement('form');
   title.classList.add('new-board-form');
   const label = document.createElement('label');

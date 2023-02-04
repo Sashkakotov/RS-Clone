@@ -19,6 +19,25 @@
   border-radius: 5%;
 }
 
+.new-board-header {
+  position: relative;
+}
+
+.close-sign {
+  position: absolute;
+  top: -3rem;
+  right: -18rem;
+
+  width: 3rem;
+
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.close-sign:hover {
+  transform: scale(1.2);
+}
+
 .new-board-form {
   display: flex;
   align-items: center;
