@@ -707,6 +707,15 @@ body {
   outline: none;
 }
 
+.new-board-input {
+  background-color: #ffffff;
+}
+
+.new-board-input:focus {
+  background-color: #ffffff;
+  color: #1d1c1c;
+}
+
 #page_container {
   position: relative;
   display: flex;
