@@ -1,18 +1,14 @@
 @charset "UTF-8";
-@import "abstracts/variables", "abstracts/mixins";
-@import "base/normalize", "base/base", "base/fonts";
-@import "layouts/footer", "layouts/header";
-@import "components/buttons";
-@import "pages/main";
-@import "layouts/createTaskForm";
 @import 'abstracts/variables', 'abstracts/mixins';
 @import 'base/normalize', 'base/base', 'base/fonts';
-<<<<<<< HEAD
-@import 'layouts/footer', 'layouts/header', 'layouts/aside', 'layouts/shadow', 'layouts/popup';
-=======
-@import 'layouts/footer', 'layouts/header', 'layouts/aside', 'layouts/column','layouts/task' ;
->>>>>>> 8d765697bd9a3de5f7e391d5a2056e833c27f9b0
+@import 'layouts/footer', 'layouts/header';
+@import 'components/buttons';
+@import 'pages/main';
+@import 'layouts/createTaskForm';
+@import 'abstracts/variables', 'abstracts/mixins';
+@import 'base/normalize', 'base/base', 'base/fonts';
+@import 'layouts/footer', 'layouts/header', 'layouts/aside', 'layouts/shadow', 'layouts/popup', 'layouts/column',
+  'layouts/task';
 @import 'components/buttons', 'components/inputs';
 @import 'pages/main';
-@import "layouts/login";
-
+@import 'layouts/login';

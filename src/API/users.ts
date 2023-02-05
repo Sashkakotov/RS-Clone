@@ -1,5 +1,5 @@
 import { SIGN_UP_URL, SIGN_IN_URL, USERS_URL } from '../constants/constants';
-// import state from '../state/state';
+import state from '../state/state';
 
 export const signUp = async (body: { name: string; login: string; password: string }) => {
   try {
@@ -30,12 +30,12 @@ export const signIn = async (body: { login: string; password: string }) => {
       },
     });
     if (response.status !== 200) {
-      /* const result = await response.json();
-      state.id = result.id;
-      state.authToken = result.token; */
       throw { ...(await response.json()) }.message;
     }
-    return await response.json();
+    const result = await response.json();
+    state.id = result.id;
+    state.authToken = result.token;
+    return result;
   } catch (err) {
     return console.log(err);
   }

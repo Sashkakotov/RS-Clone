@@ -12,6 +12,8 @@ const getArrayTasks = async (token: string, columns: IColumns[], boardId: string
 const getColumnHTML = async (token: string, boardId: string) => {
   const columns = await getColumnsInBoard(token, boardId);
   const arrayTasks = await getArrayTasks(token, columns, boardId);
+  console.log(columns);
+  console.log(arrayTasks);
   return `
 <ul class="colums-list">
 ${columns

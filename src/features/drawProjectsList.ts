@@ -15,6 +15,7 @@ const drawProjectsList = async () => {
         const board = document.createElement('a');
         board.classList.add('aside-item', 'aside-project');
         board.href = `#/project/${_id}`;
+        board.setAttribute('data-boardId', _id);
         board.textContent = el.title;
         projectsContainer.append(board);
       });

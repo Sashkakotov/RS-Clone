@@ -3,11 +3,7 @@ import UI from '../../data/UI';
 const getNavBarHtml = () =>
   `
   <div class="header__wrapper">
-<<<<<<< HEAD
-    <a href="/" class="logo">
-=======
     <a class="logo" href="/#">
->>>>>>> 8d765697bd9a3de5f7e391d5a2056e833c27f9b0
       <h1 class="logo-header">${UI.headerLogo}</h1>
     </a>
     <div class="navbar">

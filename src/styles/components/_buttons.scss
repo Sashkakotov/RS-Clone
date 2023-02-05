@@ -22,19 +22,18 @@
   color: $button-color-additional;
 }
 
-<<<<<<< HEAD
 .create-button {
   justify-self: flex-end;
-=======
+}
+
 .button-round {
   width: 180px;
   height: 42px;
-  background: #FFFFFF;
-  border: 2px solid #FF7979;
+  background: #ffffff;
+  border: 2px solid #ff7979;
   border-radius: 20px;
 
   &:hover {
-    background: #48409E;
+    background: #48409e;
   }
->>>>>>> 8d765697bd9a3de5f7e391d5a2056e833c27f9b0
 }
