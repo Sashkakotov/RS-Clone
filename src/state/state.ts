@@ -1,8 +1,11 @@
 import { IState } from '../data/types';
 
-const state = {
+const state: IState = {
   authToken: '',
-  userId: '',
+  id: '',
   boardId: '',
-} as IState;
+  name: '',
+  pageLoaded: false,
+};
+
 export default state;

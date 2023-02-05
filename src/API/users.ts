@@ -1,33 +1,44 @@
 import { SIGN_UP_URL, SIGN_IN_URL, USERS_URL } from '../constants/constants';
-import state from '../state/state';
+// import state from '../state/state';
 
 export const signUp = async (body: { name: string; login: string; password: string }) => {
-  const response = await fetch(SIGN_UP_URL, {
-    method: 'POST',
-    body: JSON.stringify(body),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }).catch();
+  try {
+    const response = await fetch(SIGN_UP_URL, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  return response.status !== 200 ? false : { ...(await response.json()) };
+    if (response.status !== 200) {
+      throw { ...(await response.json()) }.message;
+    }
+    return await response.json();
+  } catch (err) {
+    return console.log(err);
+  }
 };
 
-export const signIn = async (body: { login: string; password: string }): Promise<{ id: string; token: string }> => {
-  const response = await fetch(SIGN_IN_URL, {
-    method: 'POST',
-    body: JSON.stringify(body),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }).catch();
-  if (response.status === 200) {
-    const result = await response.json();
-    state.userId = result.id;
-    state.authToken = result.token;
-    return result;
+export const signIn = async (body: { login: string; password: string }) => {
+  try {
+    const response = await fetch(SIGN_IN_URL, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (response.status !== 200) {
+      /* const result = await response.json();
+      state.id = result.id;
+      state.authToken = result.token; */
+      throw { ...(await response.json()) }.message;
+    }
+    return await response.json();
+  } catch (err) {
+    return console.log(err);
   }
-  return response.status !== 200 ? false : { ...(await response.json()) };
 };
 
 export const getUsers = async (token: string) => {
@@ -42,14 +53,20 @@ export const getUsers = async (token: string) => {
 };
 
 export const getUserById = async (token: string, id: string) => {
-  const response = await fetch(`${USERS_URL}/${id}`, {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  const result = await response.json();
-  return result;
+  try {
+    const response = await fetch(`${USERS_URL}/${id}`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (response.status !== 200) {
+      throw { ...(await response.json()) }.message;
+    }
+    return await response.json();
+  } catch (err) {
+    return console.log(err);
+  }
 };
 
 export const updateUser = async (token: string, id: string, body: { name: string; login: string; password: string }) =>

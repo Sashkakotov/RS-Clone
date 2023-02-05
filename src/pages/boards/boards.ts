@@ -4,7 +4,7 @@ import state from '../../state/state';
 import { signIn } from '../../API/users';
 import drawProjectsList from '../../features/drawProjectsList';
 
-const Board = {
+const Boards = {
   render: async () => `
   <div class="main_home">
     ${getAsideHtml()}
@@ -22,4 +22,4 @@ const Board = {
   },
 };
 
-export default Board;
+export default Boards;

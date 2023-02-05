@@ -2,15 +2,18 @@ import './styles/style.scss';
 
 import Navbar from './pages/navBar/Navbar';
 import Bottombar from './pages/bottomBar/Bottombar';
+import LogIn from './pages/login/loginPage';
 import Utils from './services/Utils';
 import { tsQuerySelector } from './helpers/helpers';
-import Board from './pages/boards/board';
+import Boards from './pages/boards/boards';
 import Home from './pages/home/home';
 import Error404 from './pages/error404/error404';
 
-const routes: { [key: string]: typeof Home | typeof Board } = {
+const routes: { [key: string]: typeof Home | typeof Boards } = {
   '/': Home,
-  '/project/:id': Board,
+  '/project/:id': Boards,
+  '/signin': LogIn,
+  '/signup': LogIn,
 };
 
 const router = async () => {
