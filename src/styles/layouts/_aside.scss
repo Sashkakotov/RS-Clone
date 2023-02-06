@@ -63,13 +63,9 @@
 }
 
 .projects-container {
-  overflow-y: hidden;
+  overflow-y: scroll;
 
   max-height: 21rem;
-}
-
-.projects-container:hover {
-  overflow-y: scroll;
 }
 
 .projects-container::-webkit-scrollbar {
