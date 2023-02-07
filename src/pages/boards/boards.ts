@@ -6,6 +6,8 @@ import getColumnHTML from '../columns/columnsHtml';
 import { createColumns, getColumnsInBoard } from '../../API/columns';
 import { getBoardsById } from '../../API/boards';
 import getBoardControlHtml from './getBoardControlHtml';
+import UI from '../../data/UI';
+import drawColumnPlus from './drawColumnPlus';
 
 const Boards = {
   render: async () => `
@@ -23,16 +25,17 @@ const Boards = {
     const boardControlHtml = getBoardControlHtml(board.title);
 
     if (main) {
+      let result = '';
       if (columns.length !== 0) {
-        const result = await getColumnHTML(state.authToken, boardId);
-        main.innerHTML = `${boardControlHtml}${result}`;
+        result = await getColumnHTML(state.authToken, boardId);
       } else {
-        const firstColumn = await createColumns(state.authToken, state.boardId, { title: 'Todo', order: 0 });
-        const secondColumn = await createColumns(state.authToken, state.boardId, { title: 'In progress', order: 0 });
-        const thirdColumn = await createColumns(state.authToken, state.boardId, { title: 'Done', order: 0 });
-        const result = await getColumnHTML(state.authToken, state.boardId);
-        main.innerHTML = `${boardControlHtml}${result}`;
+        await createColumns(state.authToken, state.boardId, { title: UI.firstColumnName, order: 0 });
+        await createColumns(state.authToken, state.boardId, { title: UI.secondColumnName, order: 0 });
+        await createColumns(state.authToken, state.boardId, { title: UI.thirdColumnName, order: 0 });
+        result = await getColumnHTML(state.authToken, state.boardId);
       }
+      main.innerHTML = `${boardControlHtml}${result}`;
+      drawColumnPlus(boardId);
     }
 
     const plusBtn = document.querySelector('.plus-img');

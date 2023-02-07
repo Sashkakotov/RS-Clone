@@ -22,6 +22,8 @@
 }
 
 .column {
+  flex-grow: 1;
+
   width: 100%;
   min-height: 72%;
 
@@ -68,4 +70,19 @@
 
 .hide {
   display: none;
+}
+
+.plus-column {
+  position: absolute;
+  right: 0;
+  top: 5.5rem;
+
+  width: 3rem;
+  height: 3rem;
+
+  background: url(../assets/icons/plus.svg) no-repeat;
+  background-size: cover;
+  border: none;
+
+  cursor: pointer;
 }

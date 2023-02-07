@@ -16,8 +16,12 @@
 }
 
 .main-board {
+  position: relative;
+
   width: 100%;
   padding: 1rem;
+
+  padding-right: 4rem;
 }
 
 .main-info {
