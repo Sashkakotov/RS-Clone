@@ -12,6 +12,10 @@ import getBoardId from '../../services/getBoardId';
 import getInactiveUsers from '../../features/getInactiveUsers';
 import getBoardIcons from './getBoardIcons';
 import setSelectedUserId from '../../features/setSelectedUserId';
+import dragNdropTasks from '../../features/drag-n-drop/drag-n-dropTasks';
+import dragNdropColumns from '../../features/drag-n-drop/drag-n-dropColumns';
+
+
 
 const Boards = {
   render: async () => `
@@ -53,6 +57,10 @@ const Boards = {
 
     const membersSelect = <HTMLSelectElement>document.querySelector('.members-select');
     membersSelect.addEventListener('change', setSelectedUserId);
+
+    dragNdropColumns();
+    dragNdropTasks();
+
   },
 };
 
