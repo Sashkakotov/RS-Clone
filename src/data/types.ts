@@ -9,6 +9,7 @@ export interface IState {
   boardId: string;
   name: string;
   pageLoaded: boolean;
+  selectedUserId: string;
 }
 
 export type Board = {

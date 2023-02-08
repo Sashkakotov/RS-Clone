@@ -11,6 +11,7 @@ import { getUsers } from '../../API/users';
 import getBoardId from '../../services/getBoardId';
 import getInactiveUsers from '../../features/getInactiveUsers';
 import getBoardIcons from './getBoardIcons';
+import setSelectedUserId from '../../features/setSelectedUserId';
 
 const Boards = {
   render: async () => `
@@ -46,7 +47,12 @@ const Boards = {
       drawColumnPlus();
     }
 
-    getBoardIcons(board.users);
+    if (board.users.length) {
+      getBoardIcons(board.users);
+    }
+
+    const membersSelect = <HTMLSelectElement>document.querySelector('.members-select');
+    membersSelect.addEventListener('change', setSelectedUserId);
   },
 };
 

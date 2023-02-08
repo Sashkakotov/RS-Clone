@@ -5,7 +5,6 @@ const getBoardControlHtml = (title: string, users: User[]) => `
     <h2 class="board-title">${title}</h2>
     <div class="invite-block">
       <select class="members-select">
-        <option disabled selected>Members</option>
         ${users.map((el) => `<option data-member-id=${el._id}>${el.name}</option>`)}
       </select>
       <button class="button invite-button">Invite</button>
