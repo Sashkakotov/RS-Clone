@@ -1,5 +1,4 @@
 import getAsideHtml from '../home/getAsideHtml';
-import createNewBoard from '../../features/createNewBoard';
 import state from '../../state/state';
 import drawProjectsList from '../../features/drawProjectsList';
 import getColumnHTML from '../columns/columnsHtml';
@@ -8,6 +7,10 @@ import { getBoardsById } from '../../API/boards';
 import getBoardControlHtml from './getBoardControlHtml';
 import UI from '../../data/UI';
 import drawColumnPlus from './drawColumnPlus';
+import { getUsers } from '../../API/users';
+import getBoardId from '../../services/getBoardId';
+import getInactiveUsers from '../../features/getInactiveUsers';
+import getBoardIcons from './getBoardIcons';
 
 const Boards = {
   render: async () => `
@@ -17,12 +20,17 @@ const Boards = {
   </div>
   `,
   after_render: async () => {
-    const array = window.location.hash.split('/').reverse().join('/');
-    const boardId = array.slice(0, array.indexOf('/'));
+    if (state.authToken) {
+      drawProjectsList();
+    }
+
+    const boardId = getBoardId();
     const main = document.querySelector('.main-board');
     const columns = await getColumnsInBoard(state.authToken, boardId);
     const board = await getBoardsById(state.authToken, boardId);
-    const boardControlHtml = getBoardControlHtml(board.title);
+    const users = await getUsers(state.authToken);
+    const inactiveUsers = getInactiveUsers(users, board.users);
+    const boardControlHtml = getBoardControlHtml(board.title, inactiveUsers);
 
     if (main) {
       let result = '';
@@ -35,16 +43,10 @@ const Boards = {
         result = await getColumnHTML(state.authToken, state.boardId);
       }
       main.innerHTML = `${boardControlHtml}${result}`;
-      drawColumnPlus(boardId);
+      drawColumnPlus();
     }
 
-    const plusBtn = document.querySelector('.plus-img');
-    if (plusBtn) {
-      plusBtn.addEventListener('click', createNewBoard);
-    }
-    if (state.authToken) {
-      drawProjectsList();
-    }
+    getBoardIcons(board.users);
   },
 };
 

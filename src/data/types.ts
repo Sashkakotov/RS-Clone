@@ -44,3 +44,9 @@ export interface ITasks {
 }
 
 export type sign = 'signin' | 'signup';
+
+export type User = {
+  _id: string;
+  name: string;
+  login: string;
+};

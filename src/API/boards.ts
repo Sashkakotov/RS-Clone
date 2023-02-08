@@ -52,7 +52,7 @@ export const updateBoard = async (
   body: {
     title: string;
     owner: string;
-    users: [string];
+    users: string[];
   }
 ) =>
   (

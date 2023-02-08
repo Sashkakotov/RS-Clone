@@ -1,16 +1,3 @@
-.main-info {
-  width: 90%;
-}
-
-.board-control {
-  display: flex;
-  justify-content: space-between;
-}
-
-.board-title {
-  margin: 0;
-}
-
 .colums-list {
   display: flex;
   gap: 2%;
@@ -18,7 +5,7 @@
   width: 100%;
   height: 90%;
 
-  padding: 0;
+  padding: 0 4rem 0 0;
 }
 
 .column {
@@ -74,8 +61,8 @@
 
 .plus-column {
   position: absolute;
-  right: 0;
-  top: 5.5rem;
+  right: 1rem;
+  top: 6.5rem;
 
   width: 3rem;
   height: 3rem;

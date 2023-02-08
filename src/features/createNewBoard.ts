@@ -57,7 +57,7 @@ const createNewBoard = async () => {
 
   createBtn.addEventListener('click', () => {
     const resultTitle = input.value !== '' ? input.value : UI.titlePlaceholder;
-    createBoard(state.authToken, { title: resultTitle, owner: state.id, users: [''] })
+    createBoard(state.authToken, { title: resultTitle, owner: state.id, users: [] })
       .then(() => {
         drawProjectsList();
       })
