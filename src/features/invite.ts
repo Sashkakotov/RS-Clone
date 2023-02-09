@@ -12,13 +12,13 @@ const invite = async () => {
 
   if (membersSelect instanceof HTMLSelectElement) {
     let id = state.selectedUserId;
-    if (!array.includes(id)) {
-      if (id === '') {
-        const dataId = options[0].getAttribute('data-member-id');
-        if (dataId) {
-          id = dataId;
-        }
+    if (id === '') {
+      const dataId = options[0].getAttribute('data-member-id');
+      if (dataId) {
+        id = dataId;
       }
+    }
+    if (!array.includes(id)) {
       array.push(id);
       await updateBoard(state.authToken, boardId, { title: board.title, owner: id, users: array });
       getBoardIcons(array);
@@ -28,6 +28,7 @@ const invite = async () => {
           item.remove();
         }
       });
+      state.selectedUserId = '';
     }
   }
 };

@@ -62,6 +62,7 @@ const createNewBoard = async () => {
     createBoard(state.authToken, { title: resultTitle, owner: state.id, users: [] })
       .then(() => {
         drawProjectsList();
+        state.selectedUserId = '';
         popUpMessages(ToastrType.success, 'New project created');
       })
       .then(() => {
