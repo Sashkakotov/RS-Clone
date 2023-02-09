@@ -45,4 +45,4 @@ export const DRAG_N_DROP_ANIMATION_TIME = 200;
 export const DRAG_N_DROP_GROUP_TASK = 'task';
 export const DRAG_N_DROP_DIRECTION = 'horizontal';
 
-export const DEFAULT_ERROR= 'Something went wrong';
+export const DEFAULT_ERROR = 'Something went wrong';

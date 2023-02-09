@@ -1,12 +1,13 @@
 import { FUNCTIONS } from '../constants/constants';
+import { FunctionsKeys } from '../data/types';
 
 const listen = (event: MouseEvent) => {
-  const entries = Object.entries(FUNCTIONS);
+  const keys = <FunctionsKeys[]>Object.keys(FUNCTIONS);
   const target = event.target;
   if (target && target instanceof HTMLElement) {
-    entries.forEach(async (el) => {
-      if (target.classList.contains(el[0])) {
-        await el[1]();
+    keys.forEach(async (el) => {
+      if (target.classList.contains(el)) {
+        await FUNCTIONS[el]();
       }
     });
   }

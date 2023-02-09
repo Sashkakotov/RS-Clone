@@ -11,8 +11,14 @@ const invite = async () => {
   const array = board.users;
 
   if (membersSelect instanceof HTMLSelectElement) {
-    const id = state.selectedUserId;
+    let id = state.selectedUserId;
     if (!array.includes(id)) {
+      if (id === '') {
+        const dataId = options[0].getAttribute('data-member-id');
+        if (dataId) {
+          id = dataId;
+        }
+      }
       array.push(id);
       await updateBoard(state.authToken, boardId, { title: board.title, owner: id, users: array });
       getBoardIcons(array);

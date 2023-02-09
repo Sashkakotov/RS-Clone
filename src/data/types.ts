@@ -1,3 +1,5 @@
+import { FUNCTIONS } from '../constants/constants';
+
 export interface ICreateUser {
   name: string;
   login: string;
@@ -59,3 +61,4 @@ export enum ToastrType {
   warning = 'warning',
 }
 
+export type FunctionsKeys = keyof typeof FUNCTIONS;
