@@ -4,7 +4,7 @@ import { Board } from '../data/types';
 
 const drawProjectsList = async () => {
   const allProjects: Board[] = await getAllBoards(state.authToken);
-  const userProjects = allProjects.filter((el) => el.owner === state.id);
+  const userProjects = allProjects.filter((el) => el.owner === state.id || el.users.includes(state.id));
   const projects = document.querySelector('.aside-projects');
   document.querySelector('.projects-container')?.remove();
   if (projects) {
