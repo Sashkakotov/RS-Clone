@@ -1,10 +1,9 @@
 import state from '../../state/state';
 import { MEMBERS_ON_PAGE } from '../../constants/constants';
-import { User } from '../../data/types';
+import { User, Board } from '../../data/types';
 import { getUserById } from '../../API/users';
 import getUserIcon from '../../services/getUserIcon';
 import { getAllBoards } from '../../API/boards';
-import { Board } from '../../data/types';
 import { getTasksSetByUserId } from '../../API/tasks';
 
 const getMembersContainer = async () => {
@@ -27,8 +26,8 @@ const getMembersContainer = async () => {
       name.textContent = user.name;
 
       const allBoards: Board[] = await getAllBoards(state.authToken);
-      const userBoards = allBoards.filter((el) => el.users.includes(state.id));
-      const tasks = await getTasksSetByUserId(state.authToken, state.id);
+      const userBoards = allBoards.filter((item) => item.users.includes(el));
+      const tasks = await getTasksSetByUserId(state.authToken, el);
       const stats = document.createElement('p');
       stats.classList.add('member-stats');
       stats.textContent = `TASKS / PROJECTS: ${tasks.length} / ${userBoards.length}`;
