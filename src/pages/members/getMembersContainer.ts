@@ -3,6 +3,9 @@ import { MEMBERS_ON_PAGE } from '../../constants/constants';
 import { User } from '../../data/types';
 import { getUserById } from '../../API/users';
 import getUserIcon from '../../services/getUserIcon';
+import { getAllBoards } from '../../API/boards';
+import { Board } from '../../data/types';
+import { getTasksSetByUserId } from '../../API/tasks';
 
 const getMembersContainer = async () => {
   const membersContainer = document.createElement('section');
@@ -18,10 +21,19 @@ const getMembersContainer = async () => {
       const icon = getUserIcon(user.name);
       icon.classList.remove('user-icon');
       icon.classList.add('member-icon');
+
       const name = document.createElement('h5');
       name.classList.add('member-name');
       name.textContent = user.name;
-      card.append(icon, name);
+
+      const allBoards: Board[] = await getAllBoards(state.authToken);
+      const userBoards = allBoards.filter((el) => el.users.includes(state.id));
+      const tasks = await getTasksSetByUserId(state.authToken, state.id);
+      const stats = document.createElement('p');
+      stats.classList.add('member-stats');
+      stats.textContent = `TASKS / PROJECTS: ${tasks.length} / ${userBoards.length}`;
+
+      card.append(icon, name, stats);
       membersContainer.appendChild(card);
     });
 

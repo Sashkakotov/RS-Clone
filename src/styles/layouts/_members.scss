@@ -5,6 +5,7 @@
   gap: 2rem;
 
   width: 100%;
+  min-height: 48.74rem;
 }
 
 .member-card {
@@ -24,6 +25,18 @@
 
 .member-card:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.member-name {
+  margin-bottom: 0;
+
+  color: $text-color;
+}
+
+.member-stats {
+  font-size: 1.5rem;
+
+  color: $text-color-additional;
 }
 
 .members-page-controls {
