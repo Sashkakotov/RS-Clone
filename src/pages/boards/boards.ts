@@ -1,6 +1,5 @@
 import getAsideHtml from '../home/getAsideHtml';
 import state from '../../state/state';
-import drawProjectsList from '../../features/drawProjectsList';
 import getColumnHTML from '../columns/columnsHtml';
 import { createColumns, getColumnsInBoard } from '../../API/columns';
 import { getBoardsById } from '../../API/boards';
@@ -29,10 +28,6 @@ const Boards = {
   </div>
   `,
   after_render: async () => {
-    if (state.authToken) {
-      drawProjectsList();
-    }
-
     const boardId = getBoardId();
     const main = tsQuerySelector(document, '.main-board');
     const columns = await getColumnsInBoard(state.authToken, boardId);

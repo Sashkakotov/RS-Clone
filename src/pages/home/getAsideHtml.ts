@@ -10,10 +10,6 @@ const getAsideHtml = () =>
         <a href="/#/members" class="aside-item aside-members">${UI.asideMembers}</a>
         <a href="/#/settings" class="aside-item aside-settings">${UI.asideSettings}</a>
       </section>
-      <section class="aside-projects">
-        <h3 class="aside-projects_header">${UI.asideHeader}</h3>
-        <button class="plus-board" data-tooltip="Create new project"></button>
-      </section>
     </aside>
   `;
 

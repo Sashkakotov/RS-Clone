@@ -1,6 +1,5 @@
 import getAsideHtml from '../home/getAsideHtml';
 import state from '../../state/state';
-// import drawProjectsList from '../../features/drawProjectsList';
 import { getAllBoards } from '../../API/boards';
 import { Board } from '../../data/types';
 import getProjectsContainer from './getProjectsContainer';
@@ -14,10 +13,6 @@ const Projects = {
       </div>
       `,
   after_render: async () => {
-    /* if (state.authToken) {
-      drawProjectsList();
-    } */
-
     const main = document.querySelector('.main-projects');
     const allBoards: Board[] = await getAllBoards(state.authToken);
     const userBoards = allBoards.filter((el) => el.users.includes(state.id));
