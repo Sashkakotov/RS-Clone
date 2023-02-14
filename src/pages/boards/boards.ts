@@ -17,7 +17,7 @@ import dragNdropColumns from '../../features/drag-n-drop/drag-n-dropColumns';
 import taskForm from '../taskForm/taskHTML';
 import { tsQuerySelector, tsQuerySelectorAll } from '../../helpers/helpers';
 // eslint-disable-next-line import/no-cycle
-import { createTaskFormListener } from '../taskForm/createNewTask';
+import createTaskFormListener from '../taskForm/createNewTask';
 import { editColumns, confirmEditColumns, deleteColumnInBoard } from '../../features/columns/EditColumns';
 import { setNewTaskFormListener } from '../taskForm/taskFormlistenerFunction';
 
