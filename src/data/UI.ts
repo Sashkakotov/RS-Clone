@@ -8,7 +8,7 @@ const UI = {
   signUp: 'Sign up',
 
   asideHome: 'Home',
-  asideMessages: 'Messages',
+  asideProjects: 'Projects',
   asideTasks: 'Tasks',
   asideMembers: 'Members',
   asideSettings: 'Settings',
@@ -37,6 +37,8 @@ const UI = {
   wrongEmailMessage: 'Wrong email format (example@mail.info)',
   wrongPasswordMessage: 'Password should be at least 6 characters long',
   wrongPasswordRepeatMessage: 'Repeat your new password correctly!',
+
+  addProjectButton: 'ADD NEW PROJECT',
 };
 
 export default UI;
