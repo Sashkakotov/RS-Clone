@@ -4,7 +4,7 @@ import invite from '../features/invite';
 import getPrevMembersPage from '../features/getPrevMembersPage';
 import getNextMembersPage from '../features/getNextMembersPage';
 import getUserOptions from '../pages/navBar/getUserOptions';
-
+import logOut from '../features/logOut';
 import { resetCreateTaskForm, toggleTaskForm } from '../pages/taskForm/taskFormlistenerFunction';
 
 export const BASE_URL = 'https://best-team-api.up.railway.app';
@@ -30,6 +30,7 @@ export const FUNCTIONS = {
   'user-active': getUserOptions,
   'user-name': getUserOptions,
   'user-img': getUserOptions,
+  'logout-button': logOut,
 };
 
 export const LIGHT_COLORS = [
