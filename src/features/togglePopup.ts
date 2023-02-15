@@ -7,7 +7,6 @@ const togglePopup = () => {
   const popup = document.querySelector('.popup');
   if (popup) {
     popup.classList.toggle('popup-active');
-    popup.classList.toggle('popup-user');
   }
 };
 
