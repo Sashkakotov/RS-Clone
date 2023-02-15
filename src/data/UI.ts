@@ -25,6 +25,13 @@ const UI = {
   newColumnName: 'New column',
   memberTasksHeader: 'TASKS',
   memberProjectsHeader: 'PROJECTS',
+
+  nameSummary: 'Change name',
+  namePlaceholder: 'New name',
+  changeButton: 'CHANGE',
+  loginSummary: 'Change login',
+  passwordSummary: 'Change password',
+  logoutButton: 'Log out',
 };
 
 export default UI;

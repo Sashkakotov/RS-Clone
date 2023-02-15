@@ -3,7 +3,7 @@ import createNewBoard from '../features/createNewBoard';
 import invite from '../features/invite';
 import getPrevMembersPage from '../features/getPrevMembersPage';
 import getNextMembersPage from '../features/getNextMembersPage';
-import getUserOptions from '../features/getUserOptions';
+import getUserOptions from '../pages/navBar/getUserOptions';
 
 import { resetCreateTaskForm, toggleTaskForm } from '../pages/taskForm/taskFormlistenerFunction';
 
@@ -28,6 +28,8 @@ export const FUNCTIONS = {
   'create-card-action-cancel': resetCreateTaskForm,
   'new-card': toggleTaskForm,
   'user-active': getUserOptions,
+  'user-name': getUserOptions,
+  'user-img': getUserOptions,
 };
 
 export const LIGHT_COLORS = [
