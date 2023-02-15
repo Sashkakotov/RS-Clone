@@ -26,6 +26,7 @@ const userForm = () => {
       if (response) {
         state.authToken = response.token;
         state.id = response.id;
+        state.password = password;
         const user = await getUserById(state.authToken, state.id);
         if (user.name) {
           state.name = user.name;
