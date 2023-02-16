@@ -26,6 +26,7 @@ const getLocalStorage = () => {
     state.membersPage = temp.membersPage;
     state.members = temp.members;
     state.hideAside = temp.hideAside;
+    state.password = temp.password;
   }
 };
 

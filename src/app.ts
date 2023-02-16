@@ -11,6 +11,7 @@ import Error404 from './pages/error404/error404';
 import Projects from './pages/projects/projects';
 import Members from './pages/members/members';
 import Member from './pages/member/member';
+import Settings from './pages/settings/settings';
 
 const routes: { [key: string]: typeof Home | typeof Boards } = {
   '/': Home,
@@ -20,6 +21,7 @@ const routes: { [key: string]: typeof Home | typeof Boards } = {
   '/signup': LogIn,
   '/members': Members,
   '/members/:id': Member,
+  '/settings': Settings,
 };
 
 const router = async () => {

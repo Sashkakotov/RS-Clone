@@ -2,7 +2,7 @@ import getAsideHtml from '../home/getAsideHtml';
 import state from '../../state/state';
 import getColumnHTML from '../columns/columnsHtml';
 import { createColumns, getColumnsInBoard } from '../../API/columns';
-import { getBoardsById } from '../../API/boards';
+import { getBoardsById, updateBoard } from '../../API/boards';
 import getBoardControlHtml from './getBoardControlHtml';
 import UI from '../../data/UI';
 import drawColumnPlus from './drawColumnPlus';
@@ -20,6 +20,7 @@ import createTaskFormListener from '../taskForm/createNewTask';
 import { editColumns, confirmEditColumns, deleteColumnInBoard } from '../../features/columns/EditColumns';
 import { setNewTaskFormListener } from '../taskForm/taskFormlistenerFunction';
 import { getPointsByTaskId } from '../../API/points';
+import { Board, User } from '../../data/types';
 
 const Boards = {
   render: async () => `
@@ -33,8 +34,11 @@ const Boards = {
     const boardId = getBoardId();
     const main = tsQuerySelector(document, '.main-board');
     const columns = await getColumnsInBoard(state.authToken, boardId);
-    const board = await getBoardsById(state.authToken, boardId);
-    const users = await getUsers(state.authToken);
+    const board: Board = await getBoardsById(state.authToken, boardId);
+    const users: User[] = await getUsers(state.authToken);
+    const usersIds = users.map((el) => el._id);
+    const filteredBoardUsers = board.users.filter((el) => usersIds.includes(el));
+    await updateBoard(state.authToken, boardId, { title: board.title, owner: board.owner, users: filteredBoardUsers });
     const inactiveUsers = getInactiveUsers(users, board.users);
     const boardControlHtml = getBoardControlHtml(board.title, inactiveUsers);
 

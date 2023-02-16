@@ -13,6 +13,7 @@ const Members = {
     </div>
     `,
   after_render: async () => {
+    state.membersPage = 1;
     document.body.classList.remove('body_home');
     const main = document.querySelector('.main-members');
     const allBoards: Board[] = await getAllBoards(state.authToken);
