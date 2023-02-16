@@ -1,9 +1,14 @@
 import getAsideHtml from './getAsideHtml';
 import state from '../../state/state';
 import listen from '../../features/listen';
+import state from '../../state/state';
+import { getUsers } from '../../API/users';
 
 const Home = {
   render: async () => {
+    if (!(await getUsers(state.authToken))[0]) {
+      window.location.href = '#/signin';
+    }
     const view = `
     <div class="main_home">
       ${getAsideHtml()}

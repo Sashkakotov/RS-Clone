@@ -11,10 +11,12 @@ export interface IState {
   id: string;
   boardId: string;
   name: string;
+  password: string;
   pageLoaded: boolean;
   selectedUserId: string;
   membersPage: number;
   members: string[];
+  hideAside: boolean;
 }
 
 export type Board = {
