@@ -1,7 +1,6 @@
 import getAsideHtml from './getAsideHtml';
 import state from '../../state/state';
 import listen from '../../features/listen';
-import state from '../../state/state';
 import { getUsers } from '../../API/users';
 
 const Home = {
