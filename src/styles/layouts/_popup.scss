@@ -19,6 +19,11 @@
   border-radius: 0.5rem;
 }
 
+.dark-theme .popup-active,
+.dark-theme .popup-user {
+  background-color: $text-color-additional;
+}
+
 .new-board-header {
   position: relative;
 }
@@ -77,6 +82,10 @@
 
   font-size: 1.5rem;
   color: $text-color-additional;
+}
+
+.dark-theme .user-email {
+  color: $color-additional;
 }
 
 details {

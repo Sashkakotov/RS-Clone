@@ -11,6 +11,8 @@ const state: IState = {
   membersPage: 1,
   members: [],
   hideAside: false,
+  theme: '',
+  language: '',
 };
 
 const getLocalStorage = () => {
@@ -27,6 +29,8 @@ const getLocalStorage = () => {
     state.members = temp.members;
     state.hideAside = temp.hideAside;
     state.password = temp.password;
+    state.theme = temp.theme;
+    state.language = temp.language;
   }
 };
 

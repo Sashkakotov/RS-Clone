@@ -27,6 +27,16 @@
   padding: 2rem;
 }
 
+.main-info {
+  background: url(../assets/img/kanban-vs-scrum.png) no-repeat 55% 110%;
+  background-size: 85%;
+}
+
+.dark-theme .main-info {
+  background: url(../assets/img/kanban-vs-scrum-dark.jpg) no-repeat 55% 110%;
+  background-size: 85%;
+}
+
 .main-info_header {
   margin-top: 0;
 

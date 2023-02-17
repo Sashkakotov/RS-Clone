@@ -1,44 +1,34 @@
-import UI from '../../data/UI';
-import getAsideHtml from '../home/getAsideHtml';
+import getSettingsHtml from './getSettingsHtml';
+import changeTheme from '../../features/settings/changeTheme';
+import changeLanguage from '../../features/settings/changeLanguage';
+import state from '../../state/state';
 
 const Settings = {
-  render: async () => `
-        <div class="main_home">
-          ${getAsideHtml()}
-          <div class="main-settings">
-            <section class="theme-section">
-              <h4 class="settings-header">${UI.chooseTheme}</h4>
-              <form class="theme-form">
-                <label class="radio-label">
-                  <input type="radio" name="question">
-                  <span></span>
-                  <img src="" class="theme-image" alt="Dark theme">
-                </label>
-                <label class="radio-label">
-                  <input type="radio" name="question" checked>
-                  <span></span>
-                  <img src="../assets/img/light_theme.png" class="theme-image" alt="Light theme">
-                </label>
-              </form>
-            </section>
-            <section class="language-section">
-              <h4 class="settings-header">${UI.chooseLanguage}</h4>
-              <form class="language-form">
-                <label class="radio-label">
-                  <input type="radio" name="question">
-                  <span class="lang">RU</span>
-                </label>
-                <label class="radio-label">
-                  <input type="radio" name="question" checked>
-                  <span class="lang">EN</span>
-                </label>
-              </form>
-            </section>
-          </div>
-        </div>
-        `,
+  render: async () => {
+    const view = getSettingsHtml();
+    return view;
+  },
   after_render: async () => {
     document.body.classList.remove('body_home');
+
+    const inputLight = document.querySelector('.light');
+    const inputDark = document.querySelector('.dark');
+    if (inputLight instanceof HTMLInputElement && inputDark instanceof HTMLInputElement) {
+      if (state.theme === 'dark') {
+        inputLight.checked = false;
+        inputDark.checked = true;
+      }
+      if (state.theme === 'light') {
+        inputLight.checked = true;
+        inputDark.checked = false;
+      }
+    }
+
+    const themeForm = document.querySelector('.theme-form');
+    themeForm?.addEventListener('change', (event) => changeTheme(event));
+
+    const languageForm = document.querySelector('.language-form');
+    languageForm?.addEventListener('change', (event) => changeLanguage(event));
   },
 };
 
