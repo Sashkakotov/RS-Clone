@@ -42,6 +42,8 @@ const UI = {
 
   chooseTheme: 'Choose theme',
   chooseLanguage: 'Choose language',
+
+  '404Page': 'Sorry, there is no such page on our website. Try another link.',
 };
 
 export default UI;
