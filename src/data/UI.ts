@@ -39,6 +39,9 @@ const UI = {
   wrongPasswordRepeatMessage: 'Repeat your new password correctly!',
 
   addProjectButton: 'ADD NEW PROJECT',
+
+  chooseTheme: 'Choose theme',
+  chooseLanguage: 'Choose language',
 };
 
 export default UI;

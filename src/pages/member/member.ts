@@ -51,7 +51,7 @@ const Member = {
     tasks.forEach((el) => {
       const li = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `#/project/${el.boardId}`;
+      link.href = `#/projects/${el.boardId}`;
       link.textContent = `${el.title}`;
       link.classList.add('member-task-link');
       li.append(link);
@@ -68,7 +68,7 @@ const Member = {
     userBoards.forEach((el) => {
       const li = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `#/project/${el._id}`;
+      link.href = `#/projects/${el._id}`;
       link.textContent = `${el.title}`;
       link.classList.add('member-project-link');
       li.append(link);
