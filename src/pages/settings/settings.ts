@@ -13,7 +13,14 @@ const Settings = {
 
     const inputLight = document.querySelector('.light');
     const inputDark = document.querySelector('.dark');
-    if (inputLight instanceof HTMLInputElement && inputDark instanceof HTMLInputElement) {
+    const inputEnglish = document.querySelector('.english');
+    const inputRussian = document.querySelector('.russian');
+    if (
+      inputLight instanceof HTMLInputElement &&
+      inputDark instanceof HTMLInputElement &&
+      inputEnglish instanceof HTMLInputElement &&
+      inputRussian instanceof HTMLInputElement
+    ) {
       if (state.theme === 'dark') {
         inputLight.checked = false;
         inputDark.checked = true;
@@ -21,6 +28,14 @@ const Settings = {
       if (state.theme === 'light') {
         inputLight.checked = true;
         inputDark.checked = false;
+      }
+      if (state.language === 'ru') {
+        inputRussian.checked = true;
+        inputEnglish.checked = false;
+      }
+      if (state.language === 'en') {
+        inputRussian.checked = false;
+        inputEnglish.checked = true;
       }
     }
 

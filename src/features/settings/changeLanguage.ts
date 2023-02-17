@@ -1,6 +1,6 @@
 const changeLanguage = (event: Event) => {
-  event.stopPropagation();
-  console.log(event.target);
+  const { target } = event;
+  console.log(target);
 };
 
 export default changeLanguage;
