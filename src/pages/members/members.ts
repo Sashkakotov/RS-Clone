@@ -1,9 +1,10 @@
 import { getAllBoards } from '../../API/boards';
-import { Board } from '../../data/types';
+import { Board, User } from '../../data/types';
 import state from '../../state/state';
 import getAsideHtml from '../home/getAsideHtml';
 import getMembersContainer from './getMembersContainer';
 import MEMBERS_ON_PAGE from '../../constants/membersOnPage';
+import { getUsers } from '../../API/users';
 
 const Members = {
   render: async () => `
@@ -17,8 +18,12 @@ const Members = {
     document.body.classList.remove('body_home');
     const main = document.querySelector('.main-members');
     const allBoards: Board[] = await getAllBoards(state.authToken);
+    const allUsers: User[] = await getUsers(state.authToken);
+    const usersIds = allUsers.map((el) => el._id);
     const userBoards = allBoards.filter((el) => el.users.includes(state.id));
-    const members = Array.from(new Set(userBoards.map((el) => el.users).flat())).filter((el) => el !== state.id);
+    const members = Array.from(new Set(userBoards.map((el) => el.users).flat())).filter(
+      (el) => el !== state.id && usersIds.includes(el)
+    );
     state.members = members;
 
     const membersContainer = await getMembersContainer();
