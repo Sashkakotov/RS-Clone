@@ -1,10 +1,10 @@
+import i18next from 'i18next';
 import getAsideHtml from '../home/getAsideHtml';
 import state from '../../state/state';
 import getColumnHTML from '../columns/columnsHtml';
 import { createColumns, getColumnsInBoard } from '../../API/columns';
 import { getBoardsById, updateBoard } from '../../API/boards';
 import getBoardControlHtml from './getBoardControlHtml';
-import UI from '../../data/UI';
 import drawColumnPlus from './drawColumnPlus';
 import { getUsers } from '../../API/users';
 import getBoardId from '../../services/getBoardId';
@@ -47,7 +47,11 @@ const Boards = {
       if (columns.length !== 0) {
         result = await getColumnHTML(state.authToken, boardId);
       } else {
-        const COLUMNS_ARRAY = [UI.firstColumnName, UI.secondColumnName, UI.thirdColumnName];
+        const COLUMNS_ARRAY = [
+          i18next.t('firstColumnName'),
+          i18next.t('secondColumnName'),
+          i18next.t('thirdColumnName'),
+        ];
         COLUMNS_ARRAY.map(async (el) => {
           await createColumns(state.authToken, state.boardId, { title: el, order: 0 });
         });
