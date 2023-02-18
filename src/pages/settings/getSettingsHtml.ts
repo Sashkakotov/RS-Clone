@@ -1,4 +1,4 @@
-import UI from '../../data/UI';
+import i18next from 'i18next';
 import getAsideHtml from '../home/getAsideHtml';
 
 const getSettingsHtml = () =>
@@ -7,7 +7,7 @@ const getSettingsHtml = () =>
   ${getAsideHtml()}
   <div class="main-settings">
     <section class="theme-section">
-      <h4 class="settings-header">${UI.chooseTheme}</h4>
+      <h4 class="settings-header settings-header_theme">${i18next.t('chooseTheme')}</h4>
       <form class="theme-form">
         <label class="radio-label">
           <input class="dark" type="radio" name="question">
@@ -22,7 +22,7 @@ const getSettingsHtml = () =>
       </form>
     </section>
     <section class="language-section">
-      <h4 class="settings-header">${UI.chooseLanguage}</h4>
+      <h4 class="settings-header settings-header_language">${i18next.t('chooseLanguage')}</h4>
       <form class="language-form">
         <label class="radio-label">
           <input class="russian" type="radio" name="question">
