@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import { User } from '../../data/types';
 
-const getBoardControlHtml = (title: string, users: User[]) => `
+const getBoardControlHtml = async (title: string, users: User[]) => `
 <div class="board-control">
     <h2 class="board-title">${title}</h2>
     <div class="invite-block">

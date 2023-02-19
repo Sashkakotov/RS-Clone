@@ -1,4 +1,5 @@
 import { IState } from '../data/types';
+import listen from '../features/listen';
 
 const state: IState = {
   authToken: '',
@@ -31,6 +32,8 @@ const getLocalStorage = () => {
     state.password = temp.password;
     state.theme = temp.theme;
     state.language = temp.language;
+    
+    window.addEventListener('click', listen);
   }
 };
 
