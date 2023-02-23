@@ -89,9 +89,15 @@
 }
 
 details {
+  min-height: 6rem;
+
   margin: 1rem 0;
 
   font-size: 1.7rem;
+}
+
+.password-change {
+  min-height: 9rem;
 }
 
 summary {

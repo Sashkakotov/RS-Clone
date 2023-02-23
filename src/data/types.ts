@@ -21,6 +21,8 @@ export interface IState {
   theme: string;
   language: string;
   selectedTask: string;
+  sort: string;
+  order: string;
 }
 
 export type Board = {
@@ -63,6 +65,16 @@ export interface ITasks {
   users: string[];
 }
 
+export interface IPointByTaskId {
+  boardId: string;
+  done: boolean;
+  endDate: string;
+  startDate: string;
+  taskId: string;
+  title: string;
+  _id: string;
+}
+
 export type sign = 'signin' | 'signup';
 
 export enum taskForm {
@@ -86,3 +98,8 @@ export enum ToastrType {
 }
 
 export type FunctionsKeys = keyof typeof FUNCTIONS;
+
+export enum Arrows {
+  up = '↑',
+  down = '↓',
+}

@@ -27,6 +27,7 @@ const Projects = {
       main?.append(newBoardBtn, projectsContainer);
     } else {
       const noProjects = document.createElement('h2');
+      noProjects.classList.add('no-projects');
       noProjects.textContent = i18next.t('noProjects');
       main?.append(newBoardBtn, noProjects);
     }

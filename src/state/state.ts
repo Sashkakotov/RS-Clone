@@ -16,6 +16,8 @@ const state: IState = {
   theme: '',
   language: '',
   selectedTask: '',
+  sort: 'priority',
+  order: 'ASC',
 };
 
 const getLocalStorage = () => {
