@@ -13,6 +13,7 @@ const Projects = {
       </div>
       `,
   after_render: async () => {
+    state.selectedTask = '';
     document.body.classList.remove('body_home');
     const main = document.querySelector('.main-projects');
     const allBoards: Board[] = await getAllBoards(state.authToken);

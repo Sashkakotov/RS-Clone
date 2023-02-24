@@ -25,6 +25,8 @@
   padding: 2rem;
   color: $text-color-additional;
   transition: box-shadow 0.3s ease;
+
+  cursor: pointer;
 }
 
 .project-card:hover {
