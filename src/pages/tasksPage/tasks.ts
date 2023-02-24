@@ -6,6 +6,7 @@ import getTaskContainer from './getTaskContainer';
 import getTaskHtml from './getTaskHtml';
 import goToTaskBoard from '../member/goToTaskBoard';
 import reverseTaskList from '../../features/reverseTaskList';
+import searchByTasks from '../../features/searchByTasks';
 
 const Tasks = {
   render: async () => {
@@ -22,7 +23,12 @@ const Tasks = {
 
       const priorityField = document.querySelector('.priority-field');
       priorityField?.addEventListener('click', () => reverseTaskList(userTasks));
+
       table?.addEventListener('click', goToTaskBoard);
+
+      const searchInput = <HTMLFormElement>document.querySelector('.search-form');
+      searchInput.classList.remove('search-hidden');
+      searchInput.addEventListener('input', searchByTasks);
     } else {
       const noTasks = document.createElement('h2');
       noTasks.classList.add('no-tasks');
