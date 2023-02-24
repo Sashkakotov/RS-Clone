@@ -5,12 +5,16 @@ import sortTasks from '../../features/sortTasks';
 
 const getTaskContainer = async (userTasks: ITasks[]) => {
   const table = document.querySelector('.tasks-table');
+  const tableRows = document.createElement('div');
+  tableRows.classList.add('rows');
+  table?.append(tableRows);
+
   const promises: Promise<string>[] = [];
   const sortedTasks = sortTasks(userTasks);
   sortedTasks.forEach(async (el) => {
     const row = document.createElement('div');
     row.classList.add('task-row');
-    table?.append(row);
+    tableRows?.append(row);
     row.setAttribute('id', el._id);
     row.setAttribute('data-board-id', el.boardId);
     promises.push(getTaskRowHtml(el, sortedTasks.indexOf(el)));

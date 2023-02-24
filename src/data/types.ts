@@ -66,24 +66,6 @@ export interface ITasks {
   users: string[];
 }
 
-export type TaskDescription = {
-  color: string;
-  description: string;
-  duration: string;
-  priority: string;
-};
-
-export type TaskForTable = {
-  _id: string;
-  title: string;
-  order: number;
-  description: string | TaskDescription;
-  userId: string;
-  boardId: string;
-  columnId: string;
-  users: string[];
-};
-
 export interface IPointByTaskId {
   boardId: string;
   done: boolean;
