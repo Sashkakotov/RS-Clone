@@ -86,7 +86,7 @@
   "tableTaskNumber": "Позиция",
   "tableTaskTitle": "Название",
   "tableTaskStatus": "Статус",
-  "tableTaskDuration": "Продолжительность",
+  "tableTaskDuration": "Срок",
   "tableTaskPriority": "Приоритет",
   "tableTaskStartDate": "Дата начала",
   "tableTaskEndDate": "Дата завершения",
