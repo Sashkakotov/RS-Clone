@@ -1,5 +1,5 @@
-import { ITasks } from '../data/types';
-import state from '../state/state';
+import { ITasks } from '../../data/types';
+import state from '../../state/state';
 
 const sortTasks = (tasks: ITasks[]) => {
   const result: ITasks[] = [];

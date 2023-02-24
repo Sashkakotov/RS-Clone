@@ -1,4 +1,7 @@
 const searchByTasks = (event: Event) => {
+  const allStatusesCheckbox = <HTMLInputElement>document.querySelector('.all-statuses');
+  allStatusesCheckbox.checked = true;
+
   const taskTitles = document.querySelectorAll('.title-ceil');
   if (event.target && event.target instanceof HTMLInputElement) {
     const { target } = event;

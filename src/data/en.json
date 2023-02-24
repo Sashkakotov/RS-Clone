@@ -89,5 +89,7 @@
   "tableTaskDuration": "Duration",
   "tableTaskPriority": "Priority",
   "tableTaskStartDate": "Start date",
-  "tableTaskEndDate": "End date"
+  "tableTaskEndDate": "End date",
+  "taskFilterHeader": "Show tasks in status",
+  "allStatuses": "All tasks"
 }

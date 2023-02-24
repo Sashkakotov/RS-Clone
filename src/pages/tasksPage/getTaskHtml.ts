@@ -7,6 +7,24 @@ const getTaskHtml = () =>
   <div class="main_home">
     ${getAsideHtml()}
     <div class="main-tasks">
+      <form class="filter-tasks-form">
+        <label class="radio-label">
+          <input class="todo" type="radio" name="question">
+          <span>${i18next.t('firstColumnName')}</span>
+        </label>
+        <label class="radio-label">
+          <input class="in-progress" type="radio" name="question">
+          <span>${i18next.t('secondColumnName')}</span>
+        </label>
+        <label class="radio-label">
+          <input class="done" type="radio" name="question">
+          <span>${i18next.t('thirdColumnName')}</span>
+        </label>
+        <label class="radio-label">
+          <input class="all-statuses" type="radio" name="question" checked>
+          <span>${i18next.t('allStatuses')}</span>
+        </label>
+      </form>
       <div class="tasks-table">
         <div class="fields">
           <span class="table-field number-field">№</span>

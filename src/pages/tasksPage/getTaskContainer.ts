@@ -1,7 +1,7 @@
 import { ITasks, Arrows } from '../../data/types';
 import state from '../../state/state';
 import getTaskRowHtml from './getTaskRowHtml';
-import sortTasks from '../../features/sortTasks';
+import sortTasks from '../../features/tasksPage/sortTasks';
 
 const getTaskContainer = async (userTasks: ITasks[]) => {
   const table = document.querySelector('.tasks-table');

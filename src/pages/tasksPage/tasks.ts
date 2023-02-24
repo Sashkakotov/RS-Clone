@@ -5,8 +5,9 @@ import state from '../../state/state';
 import getTaskContainer from './getTaskContainer';
 import getTaskHtml from './getTaskHtml';
 import goToTaskBoard from '../member/goToTaskBoard';
-import reverseTaskList from '../../features/reverseTaskList';
-import searchByTasks from '../../features/searchByTasks';
+import reverseTaskList from '../../features/tasksPage/reverseTaskList';
+import searchByTasks from '../../features/tasksPage/searchByTasks';
+import filterTasks from '../../features/tasksPage/filterTasks';
 
 const Tasks = {
   render: async () => {
@@ -29,6 +30,9 @@ const Tasks = {
       const searchInput = <HTMLFormElement>document.querySelector('.search-form');
       searchInput.classList.remove('search-hidden');
       searchInput.addEventListener('input', searchByTasks);
+
+      const filterForm = document.querySelector('.filter-tasks-form');
+      filterForm?.addEventListener('change', filterTasks);
     } else {
       const noTasks = document.createElement('h2');
       noTasks.classList.add('no-tasks');

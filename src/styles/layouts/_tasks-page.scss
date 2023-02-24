@@ -65,3 +65,10 @@
 .task-row:hover {
   background-color: #f2f0f0;
 }
+
+.filter-tasks-form {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+}

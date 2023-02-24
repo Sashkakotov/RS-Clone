@@ -89,5 +89,7 @@
   "tableTaskDuration": "Продолжительность",
   "tableTaskPriority": "Приоритет",
   "tableTaskStartDate": "Дата начала",
-  "tableTaskEndDate": "Дата завершения"
+  "tableTaskEndDate": "Дата завершения",
+  "taskFilterHeader": "Показывать задачи в статусе",
+  "allStatuses": "Все задачи"
 }
