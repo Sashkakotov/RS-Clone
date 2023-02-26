@@ -22,6 +22,7 @@ const Tasks = {
     const main = document.querySelector('.main-tasks');
     const table = document.querySelector('.tasks-table');
     const userTasks: ITasks[] = await getTasksSetByUserId(state.authToken, state.id);
+    console.log(userTasks);
 
     if (userTasks.length) {
       getTaskContainer(userTasks);
