@@ -7,6 +7,7 @@ import getTaskHtml from './getTaskHtml';
 import goToTaskBoard from '../member/goToTaskBoard';
 import searchByTasks from '../../features/tasksPage/searchByTasks';
 import filterTasks from '../../features/tasksPage/filterTasks';
+import { checkHideAside } from '../../features/hideAside/hideAside';
 
 const Tasks = {
   render: async () => {
@@ -17,6 +18,7 @@ const Tasks = {
     const link = <HTMLAnchorElement>document.querySelector('.aside-tasks');
     link.classList.add('active-link');
     link.style.pointerEvents = 'none';
+    checkHideAside();
 
     const main = document.querySelector('.main-tasks');
     const table = document.querySelector('.tasks-table');

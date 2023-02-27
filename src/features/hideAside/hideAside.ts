@@ -1,7 +1,7 @@
 import { tsQuerySelector, tsQuerySelectorAll } from '../../helpers/helpers';
 import state from '../../state/state';
 
-const hideAside = () => {
+export const checkHideAside = () => {
   const hideAsideButton = tsQuerySelector(document, '.hide-aside__button');
   const asideMenuItem = <HTMLElement[]>[...tsQuerySelectorAll(document, '.aside-menu__item')];
   const asideNav = tsQuerySelector(document, '.aside-nav');
@@ -36,7 +36,7 @@ const hideAside = () => {
     hideAsideButton.style.transform = 'rotateY(0)';
     asideMenuItem.forEach((el) => {
       el.style.cssText = `
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding-left: 4rem;
   width: '';
   `;
@@ -54,7 +54,10 @@ const hideAside = () => {
       el.classList.add('aside-item_hidden');
     }
   });
+};
+
+export const hideAside = () => {
 
   state.hideAside = !state.hideAside;
+  checkHideAside();
 };
-export default hideAside;

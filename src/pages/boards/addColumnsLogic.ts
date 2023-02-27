@@ -14,6 +14,7 @@ import { Board } from '../../data/types';
 import renderIconsInTask from '../../features/renderIcontsInTask';
 import setTaskListener from '../../features/dropDownMenu';
 import getBoardIcons from './getBoardIcons';
+import { MAX_VISIBLE_MEMBERS } from '../../constants/constants';
 
 const addColumnsLogic = async () => {
   const boardId = getBoardId();
@@ -23,7 +24,7 @@ const addColumnsLogic = async () => {
   const board: Board = await getBoardsById(state.authToken, boardId);
 
   if (board?.users?.length) {
-    await getBoardIcons(board.users, '.member-icons');
+    await getBoardIcons(board.users, '.member-icons', MAX_VISIBLE_MEMBERS);
   }
 
   const membersSelect = document.querySelector('.members-select');
