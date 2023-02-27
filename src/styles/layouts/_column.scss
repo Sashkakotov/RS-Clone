@@ -46,30 +46,17 @@
   min-width: 350px;
 
   background: #f5f5f5;
-  //border: 0.2rem solid $done-color;
   border-radius: 16px;
-
-  /* &:nth-of-type(1) {
-    border: 0.2rem solid #ff6384;
-  } */
 
   &:nth-of-type(1) .column-header {
     border-bottom: 0.2rem solid $todo-color;
     color: $todo-color;
   }
 
-  /* &:nth-of-type(2) {
-    border: 0.2rem solid #36a2eb;
-  } */
-
   &:nth-of-type(2) .column-header {
     border-bottom: 0.2rem solid $progress-color;
     color: $progress-color;
   }
-
-  /* &:last-child {
-    border: 0.2rem solid #ffcd56;
-  } */
 
   &:last-child .column-header {
     border-bottom: 0.2rem solid $done-color;
