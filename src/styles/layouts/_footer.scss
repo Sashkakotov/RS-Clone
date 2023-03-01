@@ -1,0 +1,96 @@
+footer {
+  background-color: $color-additional;
+
+  color: $text-color-additional;
+}
+
+.dark-theme footer {
+  background-color: $text-color-additional;
+
+  color: $color-main;
+}
+
+#footer_container {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: 0 2%;
+
+  font-size: 60%;
+  align-items: center;
+}
+
+.container__footer {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  align-items: center;
+  list-style: none;
+}
+
+.github {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.github-link {
+  display: flex;
+
+  margin-right: 1rem;
+
+  font-size: 1.3vw;
+  text-decoration: none;
+  color: $text-color-additional;
+  @include tablet {
+    font-size: 1.9vw;
+  }
+}
+
+.dark-theme .github-link {
+  color: $color-additional;
+}
+
+.github-link:hover {
+  color: $button-color-additional;
+}
+
+.github-img {
+  width: 1.6rem;
+  height: 1.6rem;
+
+  margin: 0.5rem 0.2rem;
+
+  @include mobile {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+.year {
+  font-size: 1.3vw;
+  @include mobile {
+    font-size: 2vw;
+  }
+}
+
+.logo-img {
+  width: 6vw;
+  object-fit: contain;
+  @include mobile {
+    width: 10vw;
+  }
+}

@@ -1,0 +1,138 @@
+.input {
+  height: 2.5rem;
+  border: 1px solid $color-additional;
+  border-radius: 5px;
+
+  background-color: $color-additional;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: $text-color-additional;
+}
+
+.input::-webkit-input-placeholder {
+  font-size: 1.5rem;
+  color: $text-color-additional;
+}
+
+.input:focus {
+  border: 1px solid $text-color-additional;
+
+  background-color: $color-additional;
+
+  outline: none;
+}
+
+.input-wrapper {
+  position: relative;
+  margin: 20px 0;
+}
+
+.form-input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+.form-input:focus {
+  outline: none;
+}
+
+.form-label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+.form-input:focus ~ .form-label,
+.form-input:enabled ~ .form-label {
+  position: absolute;
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+.input-wrapper-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.input-wrapper-bar:before,
+.input-wrapper-bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.input-wrapper-bar:before {
+  left: 50%;
+}
+.input-wrapper-bar:after {
+  right: 50%;
+}
+
+.form-input:focus ~ .input-wrapper-bar:before,
+.form-input:focus ~ .input-wrapper-bar:after {
+  width: 50%;
+}
+
+.new-board-input {
+  background-color: $color-main;
+
+  @include mobile {
+    width: 12rem;
+  }
+}
+
+.new-board-input:focus {
+  background-color: $color-main;
+
+  color: $text-color;
+}
+
+.new-name-input,
+.new-login-input,
+.new-password-input,
+.repeat-new-password {
+  color: $text-color;
+
+  @include mobile {
+    width: 30vw;
+
+    font-size: 1.2rem;
+  }
+}
+
+.new-name-input::placeholder,
+.new-login-input::placeholder,
+.new-password-input::placeholder,
+.repeat-new-password::placeholder {
+  @include mobile {
+    font-size: 1.2rem;
+  }
+}
+
+.board-title__input,
+.column-title__input {
+  max-width: 60%;
+  border: 1px solid #c2affb;
+  background-color: #c2affb39;
+  border-radius: 5px;
+  margin-left: 5%;
+  transition: 0.5s;
+  @include mobile {
+    max-width: 40%;
+  }
+}

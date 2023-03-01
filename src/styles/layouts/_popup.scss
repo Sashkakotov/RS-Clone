@@ -1,0 +1,135 @@
+.popup {
+  display: none;
+}
+
+.popup-active {
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+
+  background-color: $color-main;
+  padding: 2rem;
+  border-radius: 0.5rem;
+
+  @include tablet {
+    padding: 1rem;
+  }
+}
+
+.dark-theme .popup-active,
+.dark-theme .popup-user {
+  background-color: $text-color-additional;
+}
+
+.new-board-header {
+  position: relative;
+
+  width: 100%;
+
+  text-align: center;
+
+  @include tablet {
+    font-size: 2rem;
+  }
+}
+
+.close-sign {
+  position: absolute;
+  top: -3rem;
+  right: -2%;
+
+  width: 3rem;
+
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  @include tablet {
+    top: -2rem;
+  }
+
+  @include mobile {
+    top: -2rem;
+    right: -5%;
+  }
+}
+
+.close-sign:hover {
+  transform: scale(1.2);
+}
+
+.new-board-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-size: 1.6rem;
+
+  @include tablet {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.new-board-img {
+  width: 80%;
+
+  margin: 2rem;
+  border-radius: 5%;
+}
+
+.popup-user {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 30%;
+
+  background-color: $color-main;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  @include tablet {
+    width: 36.1vw;
+  }
+}
+
+.user-email {
+  align-self: center;
+  margin: 0;
+  font-size: 1.5rem;
+  color: $text-color-additional;
+}
+
+.dark-theme .user-email {
+  color: $color-additional;
+}
+
+details {
+  min-height: 6rem;
+
+  margin: 1rem 0;
+
+  font-size: 1.7rem;
+
+  @include tablet {
+    font-size: 1.4rem;
+  }
+}
+
+.password-change {
+  min-height: 9rem;
+}
+
+summary {
+  cursor: pointer;
+}

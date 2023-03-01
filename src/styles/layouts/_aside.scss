@@ -1,0 +1,177 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  position: relative;
+  border-right: 2px solid $color-additional;
+
+  color: $text-color-additional;
+  transition: 1s;
+  @include tablet {
+    position: absolute;
+    background-color: white;
+    z-index: 17;
+    right: 0;
+    border-right: none;
+    display: none;
+  }
+}
+
+.aside-nav {
+  position: relative;
+  width: 22.1rem;
+  margin: 0;
+  padding: 0 5rem 2rem 0;
+}
+
+.aside-item {
+  position: relative;
+  display: flex;
+
+  margin: 2rem;
+  padding-left: 4rem;
+
+  font-size: 1.7rem;
+  color: $text-color-additional;
+}
+
+.aside-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+
+  width: 0;
+  height: 0.15rem;
+
+  background: linear-gradient(to right, $button-color-light, $button-color 100%);
+
+  transition: width 0.3s;
+}
+
+.aside-item:hover::before {
+  width: 100%;
+}
+
+.aside-item:hover,
+.active-link {
+  color: #5c3eb9;
+}
+
+.aside-item_hidden:hover::before {
+  width: 0;
+}
+
+.aside-home {
+  background: url(../assets/icons/home.svg) no-repeat left center;
+}
+
+.aside-home.active-link,
+.aside-home:hover {
+  background: url(../assets/icons/home_active.svg) no-repeat left center;
+}
+
+.aside-boards {
+  background: url(../assets/icons/foldershelf.svg) no-repeat left center;
+}
+
+.aside-boards.active-link,
+.aside-boards:hover {
+  background: url(../assets/icons/foldershelf_active.svg) no-repeat left center;
+}
+
+.aside-tasks {
+  background: url(../assets/icons/tasks.svg) no-repeat left center;
+}
+
+.aside-tasks.active-link,
+.aside-tasks:hover {
+  background: url(../assets/icons/tasks_active.svg) no-repeat left center;
+}
+
+.aside-members {
+  background: url(../assets/icons/members.svg) no-repeat left center;
+}
+
+.aside-members.active-link,
+.aside-members:hover {
+  background: url(../assets/icons/members_active.svg) no-repeat left center;
+}
+
+.aside-stats {
+  background: url(../assets/icons/statistics.svg) no-repeat left center;
+}
+
+.aside-stats.active-link,
+.aside-stats:hover {
+  background: url(../assets/icons/statistics_active.svg) no-repeat left center;
+}
+
+.aside-settings {
+  background: url(../assets/icons/settings.svg) no-repeat left center;
+}
+
+.aside-settings.active-link,
+.aside-settings:hover {
+  background: url(../assets/icons/settings_active.svg) no-repeat left center;
+}
+
+.aside-projects {
+  position: relative;
+}
+
+.projects-container {
+  overflow-y: scroll;
+
+  max-height: 21rem;
+}
+
+.projects-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.projects-container::-webkit-scrollbar-track {
+  border-radius: 0.5rem;
+
+  background-color: $color-main;
+}
+
+.projects-container::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+
+  background-color: #c2affb;
+}
+
+.aside-project {
+  background: url(../assets/icons/circle.svg) no-repeat left center;
+  margin: 0.5rem 2rem 1.5rem;
+
+  cursor: pointer;
+}
+
+.aside-projects_header {
+  margin: 1rem 1rem 1rem 2.5rem;
+
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.project-show__button {
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-show__img {
+  width: 3.5rem;
+  margin-left: 1.5rem;
+}
+
+.plus-board:hover {
+  transform: scale(1.1);
+}

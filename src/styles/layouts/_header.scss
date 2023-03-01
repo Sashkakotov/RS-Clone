@@ -1,0 +1,139 @@
+header {
+  background: $color-main;
+}
+
+.dark-theme header {
+  background: $text-color;
+}
+
+#header_container {
+  flex: 0 0 auto;
+
+  width: 100%;
+
+  padding: 0 2%;
+  border-bottom: 2px solid $color-additional;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 54px;
+}
+
+.logo {
+  width: 22.3rem;
+  height: 54px;
+
+  background: url(../assets/icons/cubes.ico) no-repeat left center;
+  border-right: 2px solid $color-additional;
+  @include mobile {
+    width: 4.5rem;
+  }
+}
+
+.logo-header {
+  padding-left: 4rem;
+  font-size: 2rem;
+  color: $text-color;
+  @include mobile {
+    display: none;
+  }
+}
+
+.logo-header:hover,
+.dark-theme .logo-header:hover {
+  color: $button-color-additional;
+}
+
+.dark-theme .logo-header {
+  color: $color-main;
+  @include mobile {
+    display: none;
+  }
+}
+
+.navbar {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 2 0 auto;
+
+  padding-left: 2rem;
+}
+
+.search-form {
+  font-size: 1.6rem;
+  color: $text-color-additional;
+}
+
+.search-form label {
+  @include tablet {
+    display: none;
+  }
+}
+
+.search-input:focus {
+  font-size: 1.5rem;
+  color: $text-color;
+}
+
+.search-hidden {
+  visibility: hidden;
+}
+
+.sign {
+  display: flex;
+  align-items: center;
+}
+
+.sign-in {
+  margin-right: 1rem;
+
+  font-size: 1.5rem;
+  color: $text-color-additional;
+}
+
+.sign-in:hover {
+  color: $button-color-additional;
+}
+
+.hidden {
+  display: none;
+}
+
+.user-active {
+  display: flex;
+  align-items: center;
+  padding-right: 3rem;
+  background: url(../assets/icons/arrow-down.svg) no-repeat right center;
+  background-size: 10%;
+
+  cursor: pointer;
+  @include tablet {
+    width: 22.2rem;
+    height: 6rem;
+    padding-left: 6rem;
+    position: absolute;
+    right: -2.1vw;
+    padding-right: 0;
+    background: white;
+    display: none;
+    z-index: 10;
+  }
+}
+
+.dark-theme .user-active {
+  background: url(../assets/icons/arrow-down_light.svg) no-repeat right center;
+  background-size: 15%;
+}
+
+.user-name {
+  margin: 0 1rem 0 0;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}

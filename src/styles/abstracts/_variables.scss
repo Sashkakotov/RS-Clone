@@ -1,0 +1,19 @@
+/// @type Color
+$color-main: #ffffff;
+$color-additional: #dddbdb;
+$text-color: #1d1c1c;
+$text-color-additional: #939090;
+$button-color: #422c82;
+$button-color-additional: #b19bf3;
+$button-color-light: #c2affb;
+$todo-color: #7553dc;
+$progress-color: #f19452;
+$done-color: #4a9b4f;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1600px !default;
+$wrapper-width: 1160px;
+$small-desktop-width: 1599px;
+$tablet-width: 999px;
+$mobile-width: 639px;
